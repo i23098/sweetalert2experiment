@@ -1,0 +1,21 @@
+[versions]
+jersey = "3.1.7"
+slf4j = "2.0.13"
+log4j-slf4j-binding = "2.23.1"
+
+[libraries]
+gson = "com.google.code.gson:gson:2.11.0"
+
+h2database = "com.h2database:h2:2.2.224"
+
+jakarta-servlet-api = "jakarta.servlet:jakarta.servlet-api:6.0.0"
+jersey-container-servlet =  {module = "org.glassfish.jersey.containers:jersey-container-servlet", version.ref = "jersey"}
+jersey-server =  {module = "org.glassfish.jersey.core:jersey-server", version.ref = "jersey"}
+jersey-inject = {module = "org.glassfish.jersey.inject:jersey-hk2", version.ref = "jersey"}
+
+slf4j-api = {module = "org.slf4j:slf4j-api", version.ref = "slf4j"}
+slf4j-runtime-log4j2 = {module = "org.apache.logging.log4j:log4j-slf4j2-impl", version.ref = "log4j-slf4j-binding"}
+
+[bundles]
+jersey-api = ["jersey-server", "gson"]
+jersey-runtime = ["jersey-container-servlet", "jersey-inject"]
